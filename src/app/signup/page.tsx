@@ -1,26 +1,58 @@
 'use client'
-import { signIn } from 'next-auth/react'
+
 import Link from 'next/link'
 import { FormEvent } from 'react'
+import { signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 
-export default function Signin() {
+export default function Signup() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const form = new FormData(e.target as HTMLFormElement)
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: form.get('email'),
+        password: form.get('password'),
+      }),
+    })
+    const { user } = await res.json()
+    if (!user) return null
     await signIn('credentials', {
-      email: form.get('email'),
+      email: user.email,
       password: form.get('password'),
       callbackUrl: '/',
     })
   }
+
   return (
     <div>
+      <h2 className='text-3xl text-center mt-10'>S&apos;inscrire</h2>
       <form
         onSubmit={handleSubmit}
         className='flex flex-col gap-4'
       >
-        <h2 className='text-3xl text-center mt-10'>Login</h2>
+        <label className='flex flex-col gap-2'>
+          Prénom
+          <input
+            className='border border-gray-300 rounded-md px-4 py-2'
+            type='text'
+            name='name'
+            required
+          />
+        </label>
+        <label className='flex flex-col gap-2'>
+          Age
+          <input
+            className='border border-gray-300 rounded-md px-4 py-2'
+            type='number'
+            name='age'
+            required
+          />
+        </label>
         <label className='flex flex-col gap-2'>
           Adresse mail
           <input
@@ -40,22 +72,22 @@ export default function Signin() {
           />
         </label>
         <input
-          className='bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
+          className='bg-fuchsia-500 text-white p-3 rounded-md'
           type='submit'
-          value='Se connecter'
+          value="S'inscrire"
         />
         <button
           className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
           onClick={() => signIn('google')}
         >
           <FcGoogle />
-          Se connecter avec google
+          S&apos;inscrire avec google
         </button>
         <Link
-          href='/signup'
-          className='text-center bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
+          href='/signin'
+          className='text-center bg-fuchsia-500 text-white p-3 rounded-md'
         >
-          S&apos;inscrire
+          Se connecter
         </Link>
       </form>
     </div>

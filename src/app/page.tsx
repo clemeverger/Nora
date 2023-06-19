@@ -1,10 +1,12 @@
 'use client'
-import { signIn } from 'next-auth/react'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <button onClick={() => signIn()}>Signin</button>
-    </main>
+    <div className='flex min-h-screen flex-col items-center justify-evenly p-24'>
+      <Link href={'/signup'}>Se connecter</Link>
+      <Link href={'/signin'}>S&apos;inscrire</Link>
+      <Link href={'/signup'}>Continuer en tant qu&apos;inviter</Link>
+    </div>
   )
 }
