@@ -1,47 +1,63 @@
 'use client'
 import { signIn } from 'next-auth/react'
-import { useState } from 'react'
+import Link from 'next/link'
+import { FormEvent } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 
 export default function Signin() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    const form = new FormData(e.target as HTMLFormElement)
+    await signIn('credentials', {
+      email: form.get('email'),
+      password: form.get('password'),
+      callbackUrl: '/',
+    })
+  }
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-      <div className='flex flex-col gap-6 border rounded-md p-6'>
-        <h1 className='text-2xl font-bold'>Sign in</h1>
-        <div className='flex gap-4'>
-          <label className='flex flex-col gap-1 text-black font-medium'>
-            Email
-            <input
-              className='rounded-md border border-gray-300 p-1'
-              type='text'
-              placeholder='username'
-            />
-          </label>
-          <label className='flex flex-col gap-1 text-black font-medium'>
-            Password
-            <input
-              className='rounded-md border border-gray-300 p-1'
-              type='password'
-              placeholder='password'
-            />
-          </label>
-        </div>
-        <span className='h-[0.5px] w-full bg-gray-300'></span>
+    <div>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col gap-4'
+      >
+        <h2 className='text-3xl text-center mt-10'>Se connecter</h2>
+        <label className='flex flex-col gap-2'>
+          Adresse mail
+          <input
+            className='border border-gray-300 rounded-md px-4 py-2'
+            type='text'
+            name='email'
+            required
+          />
+        </label>
+        <label className='flex flex-col gap-2'>
+          Mot de passe
+          <input
+            className='border border-gray-300 rounded-md px-4 py-2'
+            type='password'
+            name='password'
+            required
+          />
+        </label>
+        <input
+          className='bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
+          type='submit'
+          value='Se connecter'
+        />
         <button
-          className='flex justify-center items-center gap-2 border p-1 rounded-md'
+          className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
           onClick={() => signIn('google')}
         >
-          <FcGoogle /> Connexion avec google
+          <FcGoogle />
+          Se connecter avec google
         </button>
-        <button
-          className='text-white bg-blue-500 rounded-md p-1'
-          onClick={() => signIn('credentials', { redirect: false, mail: 'mail', password: 'password' })}
+        <Link
+          href='/signup'
+          className='text-center bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
         >
-          Connexion
-        </button>
-      </div>
+          S&apos;inscrire
+        </Link>
+      </form>
     </div>
   )
 }
