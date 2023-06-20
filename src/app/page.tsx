@@ -13,6 +13,7 @@ export default function Home() {
       <Link href={'/signin'}>Se connecter</Link>
       <Link href={'/signup'}>Continuer en tant qu&apos;inviter</Link>
       <Link href={'/diag'}>Diag</Link>
+      <Link href={'/blog'}>Blog</Link>
     </div>
   )
 }

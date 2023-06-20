@@ -10,10 +10,12 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      'primary': '#E3B3FA',
-      'secondary': '#3A2544',
-      'light': '#FDFDFD',
-      'primary_light': '#F2E5F9',
+      primary: '#E3B3FA',
+      primary_dark: '#3A2544',
+      primary_light: '#F2E5F9',
+      white: '#FDFDFD',
+      yellow: '#FCECC2',
+      orange: '#FAEBE3',
     },
     fontFamily: {
       primary: ['"Rametto one"', 'serif'],
@@ -30,12 +32,12 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
-      }
-    }
-  }
+      },
+    },
+  },
 }

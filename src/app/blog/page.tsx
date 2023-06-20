@@ -6,7 +6,7 @@ const Blog = () => {
       <h3 className='text-3xl'>Blog</h3>
       <input
         type={'text'}
-        className='border border-gray-300 rounded-md px-4 py-1'
+        className='bg-primary_dark rounded-full px-4 py-1'
         placeholder={'Rechercher un article'}
       />
     </div>
