@@ -20,7 +20,7 @@ export default function Signin() {
         onSubmit={handleSubmit}
         className='flex flex-col gap-4'
       >
-        <h2 className='text-3xl text-center mt-10'>Login</h2>
+        <h2 className='text-3xl text-center mt-10'>Se connecter</h2>
         <label className='flex flex-col gap-2'>
           Adresse mail
           <input

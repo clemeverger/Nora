@@ -15,6 +15,8 @@ export default function Signup() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        name: form.get('name'),
+        age: Number(form.get('age')),
         email: form.get('email'),
         password: form.get('password'),
       }),
@@ -24,12 +26,12 @@ export default function Signup() {
     await signIn('credentials', {
       email: user.email,
       password: form.get('password'),
-      callbackUrl: '/',
+      callbackUrl: '/diag',
     })
   }
 
   return (
-    <div>
+    <div className='flex flex-col gap-4'>
       <h2 className='text-3xl text-center mt-10'>S&apos;inscrire</h2>
       <form
         onSubmit={handleSubmit}
@@ -76,20 +78,20 @@ export default function Signup() {
           type='submit'
           value="S'inscrire"
         />
-        <button
-          className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
-          onClick={() => signIn('google')}
-        >
-          <FcGoogle />
-          S&apos;inscrire avec google
-        </button>
-        <Link
-          href='/signin'
-          className='text-center bg-fuchsia-500 text-white p-3 rounded-md'
-        >
-          Se connecter
-        </Link>
       </form>
+      <button
+        className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
+        onClick={() => signIn('google')}
+      >
+        <FcGoogle />
+        S&apos;inscrire avec google
+      </button>
+      <Link
+        href='/signin'
+        className='text-center bg-fuchsia-500 text-white p-3 rounded-md'
+      >
+        Se connecter
+      </Link>
     </div>
   )
 }
