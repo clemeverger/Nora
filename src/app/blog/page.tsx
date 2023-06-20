@@ -7,9 +7,16 @@ const Article1 = () => {
   return (
     <Link
       href={'blog/article1'}
-      className='bg-yellow rounded-xl p-4'
+      className='relative bg-yellow rounded-xl p-4'
     >
       <h4 className='text-xl font-semibold text-primary_dark mb-2'>Médecine</h4>
+      <Image
+        className='absolute top-2 right-2'
+        src={'/article1.svg'}
+        alt={'icon'}
+        width={40}
+        height={40}
+      />
       <p className='text-primary_dark font-medium'>Découvre notre liste de spécialistes spécialement adaptés pour ton besoin</p>
     </Link>
   )
@@ -18,9 +25,16 @@ const Article2 = () => {
   return (
     <Link
       href={'blog/article2'}
-      className='bg-orange rounded-xl p-4'
+      className='relative bg-orange rounded-xl p-4'
     >
       <h4 className='text-xl font-semibold text-primary_dark mb-2'>Recherche</h4>
+      <Image
+        className='absolute top-2 right-2'
+        src={'/article2.svg'}
+        alt={'icon'}
+        width={40}
+        height={40}
+      />
       <p className='text-primary_dark font-medium'>Découvre notre liste de spécialistes spécialement adaptés pour ton besoin</p>
     </Link>
   )
@@ -29,9 +43,16 @@ const Article3 = () => {
   return (
     <Link
       href={'blog/article3'}
-      className='bg-primary_light rounded-xl p-4'
+      className='relative bg-primary_light rounded-xl p-4'
     >
       <h4 className='text-xl font-semibold text-primary_dark mb-2'>Témoignages</h4>
+      <Image
+        className='absolute top-2 right-2'
+        src={'/article3.svg'}
+        alt={'icon'}
+        width={40}
+        height={40}
+      />
       <p className='text-primary_dark font-medium'>Découvre notre liste de spécialistes spécialement adaptés pour ton besoin</p>
     </Link>
   )
@@ -40,9 +61,16 @@ const Article4 = () => {
   return (
     <Link
       href={'blog/article4'}
-      className='bg-primary rounded-xl p-4'
+      className='relative bg-primary rounded-xl p-4'
     >
       <h4 className='text-xl font-semibold text-primary_dark mb-2'>Conseils</h4>
+      <Image
+        className='absolute top-2 right-2'
+        src={'/article4.svg'}
+        alt={'icon'}
+        width={40}
+        height={40}
+      />
       <p className='text-primary_dark font-medium'>Découvre notre liste de spécialistes spécialement adaptés pour ton besoin</p>
     </Link>
   )
