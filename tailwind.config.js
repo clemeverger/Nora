@@ -13,8 +13,7 @@ module.exports = {
         orange: '#FAEBE3',
       },
       fontFamily: {
-        primary: ['"Rametto one"', 'serif'],
-        secondary: ['Manrope', 'serif'],
+        manrope: ['Manrope, sans-serif'],
       },
     },
   },
