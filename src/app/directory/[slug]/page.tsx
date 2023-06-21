@@ -1,4 +1,5 @@
 import Select from "../Select";
+import Image from "next/image";
 
 export default async function Page({ params }: any) {
   const { slug } = params;
@@ -67,11 +68,13 @@ export default async function Page({ params }: any) {
                 key={med.recordid}
                 className="flex flex-col items-center text-center"
               >
-                <img
-                  src="https://picsum.photos/200"
+                <Image
+                  src="/article1.svg"
                   className="w-16 rounded-full shadow-lg"
                   alt="Avatar circle"
-                />
+                  width={200}
+                  height={200}
+                ></Image>
                 <p className="text-primary_dark text-base font-semibold mt-4 mb-1">
                   {formattedName}
                 </p>
