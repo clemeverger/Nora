@@ -19,12 +19,14 @@ const Select = ({ slug }: any) => {
   };
 
   return (
-    <section className="shrink-0 space-8">
+    <section className="shrink-0 space-x-8">
       {options.map((option) => (
         <button
           className={
-            "p-1 rounded text-secondary text-opacity-70" +
-            (profession == option.value ? " bg-primary text-opacity-100" : "")
+            "p-1 rounded" +
+            (profession == option.value
+              ? " bg-primary_light text-opacity-100 text-primary_dark"
+              : " text-primary_dark text-opacity-70")
           }
           key={option.value}
           value={option.value}
