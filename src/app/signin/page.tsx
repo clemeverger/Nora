@@ -46,7 +46,7 @@ export default function Signin() {
         />
         <button
           className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
-          onClick={() => signIn('google')}
+          onClick={() => signIn('google', { callbackUrl: '/' })}
         >
           <FcGoogle />
           Se connecter avec google
