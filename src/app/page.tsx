@@ -27,6 +27,8 @@ export default function Home() {
       </div>
 
       <Link href={'/'}>Continuer en tant qu&apos;invité</Link>
+      <Link href={'/blog'}>blog</Link>
+      <Link href={'/diag'}>diag</Link>
     </div>
   )
 }
