@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='fr'>
       <NextAuthProvider>
         <body className='bg-[#FDFDFD] px-6 font-manrope'>
-          {/* <Header /> */}
+          <Header />
           <main>{children}</main>
         </body>
       </NextAuthProvider>

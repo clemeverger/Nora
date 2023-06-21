@@ -5,7 +5,7 @@ import { authOptions } from '../api/auth/[...nextauth]/route'
 const layout = async ({ children }: { children: React.ReactNode }) => {
   const session = await getServerSession(authOptions as any)
   if (session) {
-    redirect('/')
+    redirect('/home')
   }
   return <>{children}</>
 }

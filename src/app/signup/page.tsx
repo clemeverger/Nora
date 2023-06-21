@@ -26,7 +26,7 @@ export default function Signup() {
     await signIn('credentials', {
       email: user.email,
       password: form.get('password'),
-      callbackUrl: '/diag',
+      callbackUrl: '/home',
     })
   }
 
@@ -81,7 +81,7 @@ export default function Signup() {
       </form>
       <button
         className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
-        onClick={() => signIn('google')}
+        onClick={() => signIn('google', { callbackUrl: '/home' })}
       >
         <FcGoogle />
         S&apos;inscrire avec google
