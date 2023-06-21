@@ -1,21 +1,25 @@
-import './globals.css'
-import NextAuthProvider from './components/NextAuthProvider'
-import Header from './components/Header'
+import "./globals.css";
+import NextAuthProvider from "./components/NextAuthProvider";
+import Header from "./components/Header";
 
 export const metadata = {
-  title: 'Nora',
-  description: 'Noora',
-}
+  title: "Nora",
+  description: "Noora",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='fr'>
+    <html lang="fr">
       <NextAuthProvider>
-        <body className='bg-[#FDFDFD] px-6'>
+        <body className="bg-[#FDFDFD] px-6">
           {/* <Header /> */}
           <main>{children}</main>
         </body>
       </NextAuthProvider>
     </html>
-  )
+  );
 }

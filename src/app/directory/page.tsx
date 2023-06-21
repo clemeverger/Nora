@@ -1,10 +1,8 @@
-import React from 'react'
-import Select from './Select'
+import React from "react";
+import Select from "./Select";
 
 const page = () => {
-  return (
-    <Select />
-  )
-}
+  return <Select />;
+};
 
-export default page
+export default page;
