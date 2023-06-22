@@ -37,6 +37,7 @@ const Article = () => {
       </div>
       <Videos />
       <Articles />
+      <div className='h-8'></div>
     </div>
   )
 }

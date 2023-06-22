@@ -39,7 +39,7 @@ const ARTICLES = [
 
 const Articles = () => {
   return (
-    <section className='flex flex-col gap-4 mb-4'>
+    <section className='flex flex-col gap-4'>
       <h4 className='text-xl text-primary_dark'>Articles</h4>
       {ARTICLES.map((article, index) => (
         <div
