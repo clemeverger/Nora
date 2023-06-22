@@ -1,4 +1,5 @@
 'use client'
+import { motion } from 'framer-motion'
 import React, { FormEvent } from 'react'
 
 const Question1 = ({ setData }: any) => {
@@ -20,7 +21,10 @@ const Question1 = ({ setData }: any) => {
         className='grow-[1] flex flex-col justify-evenly'
       >
         <div className='flex flex-col gap-4'>
-          <label className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'>
+          <motion.label
+            whileHover={{ scale: 1.1 }}
+            className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'
+          >
             Oui
             <input
               type='radio'
@@ -29,8 +33,11 @@ const Question1 = ({ setData }: any) => {
               value='yes'
               required
             />
-          </label>
-          <label className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'>
+          </motion.label>
+          <motion.label
+            whileHover={{ scale: 1.1 }}
+            className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'
+          >
             Non
             <input
               type='radio'
@@ -38,8 +45,11 @@ const Question1 = ({ setData }: any) => {
               value='no'
               required
             />
-          </label>
-          <label className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'>
+          </motion.label>
+          <motion.label
+            whileHover={{ scale: 1.1 }}
+            className='flex flex-row-reverse justify-end content-center gap-2 border border-gray-300 px-2 py-4 rounded-md'
+          >
             Je en souhaite pas répondre
             <input
               type='radio'
@@ -47,7 +57,7 @@ const Question1 = ({ setData }: any) => {
               value='noAnswer'
               required
             />
-          </label>
+          </motion.label>
         </div>
         <input
           type='submit'
