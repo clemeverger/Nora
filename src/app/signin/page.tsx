@@ -15,32 +15,34 @@ export default function Signin() {
     })
   }
   return (
-    <div>
+    <div className='h-full'>
       <form
         onSubmit={handleSubmit}
-        className='flex flex-col gap-4'
+        className='flex flex-col justify-evenly h-full'
       >
-        <h2 className='text-3xl text-center mt-10'>Se connecter</h2>
-        <label className='flex flex-col gap-2'>
-          Adresse mail
-          <input
-            className='border border-gray-300 rounded-md px-4 py-2'
-            type='text'
-            name='email'
-            required
-          />
-        </label>
-        <label className='flex flex-col gap-2'>
-          Mot de passe
-          <input
-            className='border border-gray-300 rounded-md px-4 py-2'
-            type='password'
-            name='password'
-            required
-          />
-        </label>
+        <h2 className='text-3xl text-center mt-10 text-primary_dark font-semibold'>Se connecter</h2>
+        <div className='flex flex-col gap-4'>
+          <label className='flex flex-col gap-2'>
+            Adresse mail
+            <input
+              className='border border-gray-300 rounded-md px-4 py-2'
+              type='text'
+              name='email'
+              required
+            />
+          </label>
+          <label className='flex flex-col gap-2'>
+            Mot de passe
+            <input
+              className='border border-gray-300 rounded-md px-4 py-2'
+              type='password'
+              name='password'
+              required
+            />
+          </label>
+        </div>
         <input
-          className='bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
+          className='bg-primary_dark text-primary px-4 py-2 rounded-md mt-2'
           type='submit'
           value='Se connecter'
         />
@@ -53,9 +55,9 @@ export default function Signin() {
         </button>
         <Link
           href='/signup'
-          className='text-center bg-fuchsia-500 text-white px-4 py-2 rounded-md mt-2'
+          className='underline'
         >
-          S&apos;inscrire
+          Vous n&apos;avez pas de compte ?
         </Link>
       </form>
     </div>

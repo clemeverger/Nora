@@ -1,8 +1,7 @@
 import React from 'react'
-import Diag from './components/Diag'
 
 const page = () => {
-  return <Diag />
+  return <div>page</div>
 }
 
 export default page

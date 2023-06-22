@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 
@@ -31,8 +31,8 @@ export default function Signup() {
   }
 
   return (
-    <div className='flex flex-col gap-4'>
-      <h2 className='text-3xl text-center mt-10'>S&apos;inscrire</h2>
+    <div className='flex flex-col gap-4 mb-4'>
+      <h2 className='text-3xl text-center mt-10 text-primary_dark font-semibold'>S&apos;inscrire</h2>
       <form
         onSubmit={handleSubmit}
         className='flex flex-col gap-4'
@@ -73,24 +73,32 @@ export default function Signup() {
             required
           />
         </label>
+        <label className='flex flex-row-reverse text-xs text-primary_dark gap-4'>
+          Acceptez-vous que Nora utilise vos données personnelles pour les recherches scientifiques.....
+          <input
+            type='checkbox'
+            name='accept'
+            required
+          />
+        </label>
         <input
-          className='bg-fuchsia-500 text-white p-3 rounded-md'
+          className='bg-primary_dark text-primary p-3 rounded-md'
           type='submit'
           value="S'inscrire"
         />
       </form>
       <button
         className='flex justify-center items-center gap-2 border border-gray-300 p-3 rounded-md'
-        onClick={() => signIn('google', { callbackUrl: '/home' })}
+        onClick={() => signIn('google', { callbackUrl: '/diag' })}
       >
         <FcGoogle />
         S&apos;inscrire avec google
       </button>
       <Link
         href='/signin'
-        className='text-center bg-fuchsia-500 text-white p-3 rounded-md'
+        className='underline'
       >
-        Se connecter
+        Vous avez déjà un compte ?
       </Link>
     </div>
   )
