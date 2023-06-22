@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Select from "../Select";
 import Image from "next/image";
 
@@ -45,7 +46,7 @@ export default async function Page({ params }: any) {
     : (data = filtrerAllMedecins(specData));
 
   return (
-    <div className="overflow-x-hidden w-full">
+    <div>
       <h1 className="text-3xl top-xl pt-4 pb-4 text-primary_dark">Annuaire</h1>
 
       <form className="flex items-center pb-8">
@@ -93,23 +94,25 @@ export default async function Page({ params }: any) {
             const formattedName = `${firstNameInitial}. ${lastName}`;
             displayedNames.add(med.fields.nom);
             return (
-              <li
-                key={med.recordid}
-                className="flex flex-col items-center text-center"
-              >
-                <Image
-                  src="/article1.svg"
-                  className="w-16 rounded-full shadow-lg"
-                  alt="Avatar circle"
-                  width={200}
-                  height={200}
-                ></Image>
-                <p className="text-primary_dark text-base font-semibold mt-4 mb-1">
-                  {formattedName}
-                </p>
-                <p className="text-primary_dark text-sm font-normal">
-                  {med.fields.libelle_profession}
-                </p>
+              <li key={med.recordid}>
+                <Link
+                  className="flex flex-col items-center text-center"
+                  href={""}
+                >
+                  <Image
+                    src="/article1.svg"
+                    className="w-16 rounded-full shadow-lg"
+                    alt="Avatar circle"
+                    width={200}
+                    height={200}
+                  ></Image>
+                  <p className="text-primary_dark text-base font-semibold mt-4 mb-1">
+                    {formattedName}
+                  </p>
+                  <p className="text-primary_dark text-sm font-normal">
+                    {med.fields.libelle_profession}
+                  </p>
+                </Link>
               </li>
             );
           }
