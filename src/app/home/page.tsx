@@ -9,7 +9,7 @@ const Home = () => {
   const name = session?.data?.user?.name
 
   return (
-    <div>
+    <>
       <div className='flex justify-between items-center top-xl pt-4 pb-4'>
         <h1 className='text-3xl text-primary_dark'>Bonjour, {name}</h1>
         <Link
@@ -122,7 +122,7 @@ const Home = () => {
       </div>
       <Link
         href={'/diag'}
-        className='relative bg-yellow rounded-xl p-4 block mb-8'
+        className='relative bg-yellow rounded-xl p-4 block mb-24'
       >
         <h4 className='text-xl font-medium text-primary_dark mb-2'>Quiz du mois</h4>
         <Image
@@ -134,7 +134,7 @@ const Home = () => {
         />
         <p className='text-primary_dark font-light'>Et si on apprenait à te connaître un peu plus à travers tes troubles menstruels.</p>
       </Link>
-    </div>
+    </>
   )
 }
 
