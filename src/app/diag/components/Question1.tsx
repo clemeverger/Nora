@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useSession } from 'next-auth/react'
 import React, { FormEvent } from 'react'
 
 const Question1 = ({ setData }: any) => {
@@ -13,9 +14,12 @@ const Question1 = ({ setData }: any) => {
     }))
   }
 
+  const session = useSession()
+  const name = session?.data?.user?.name
+
   return (
     <div className='h-full flex flex-col '>
-      <h2 className='text-3xl text-center mt-10 mb-10 text-primary_dark font-semibold'>Coucou Nora ! Première question As-tu déjà été diagnostiquée ?</h2>
+      <h2 className='text-3xl text-center mt-10 mb-10 text-primary_dark font-semibold'>Coucou {name} ! Première question As-tu déjà été diagnostiquée ?</h2>
       <form
         onSubmit={handleSubmit}
         className='grow-[1] flex flex-col justify-evenly'
