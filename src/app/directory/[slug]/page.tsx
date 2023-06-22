@@ -5,15 +5,44 @@ export default async function Page({ params }: any) {
   const { slug } = params;
 
   const res = await fetch(
-    `https://public.opendatasoft.com/api/records/1.0/search/?dataset=medecins&q=&rows=1000&refine.libelle_profession=${slug}`
+    slug !== "all"
+      ? `https://public.opendatasoft.com/api/records/1.0/search/?dataset=medecins&q=&rows=1000&refine.libelle_profession=${slug}`
+      : `https://public.opendatasoft.com/api/records/1.0/search/?dataset=medecins&q=&rows=1000`
   );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  const data = await res.json();
+  const specData = await res.json();
   const displayedNames = new Set();
+
+  function filtrerAllMedecins(data: any) {
+    const professionsAutorisees = [
+      "Gynécologue",
+      "Médecin généraliste",
+      "Sage-femme",
+    ];
+
+    const medecinsFiltres = data.records.filter((record: any) =>
+      professionsAutorisees.includes(record.fields.libelle_profession)
+    );
+    const resultatsMelanges = [...medecinsFiltres]; // Crée une copie du tableau des résultats
+
+    for (let i = resultatsMelanges.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Génère un index aléatoire entre 0 et i
+      [resultatsMelanges[i], resultatsMelanges[j]] = [
+        resultatsMelanges[j],
+        resultatsMelanges[i],
+      ]; // Échange les éléments à l'index i et j
+    }
+    return resultatsMelanges;
+  }
+
+  var data;
+  slug !== "all"
+    ? (data = specData.records)
+    : (data = filtrerAllMedecins(specData));
 
   return (
     <div className="overflow-x-hidden w-full">
@@ -54,10 +83,10 @@ export default async function Page({ params }: any) {
       </div>
 
       <ul className="grid gap-4 grid-cols-3">
-        {data.records!.map((med: any) => {
+        {data!.map((med: any) => {
           if (!displayedNames.has(med.fields.nom)) {
             const fullName = med.fields.nom;
-            const nameParts = fullName.split(" "); // Divise la chaîne en un tableau ["John", "Doe"]
+            const nameParts = fullName.split(" ");
             const firstNameInitial = nameParts[0].charAt(0); // Récupère la première lettre du prénom
             const lastName = nameParts[1]; // Récupère le nom
 

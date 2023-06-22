@@ -8,12 +8,10 @@ import PopupPrice from "./components/page";
 
 const CalendarPage = () => {
   const [page, setPage] = useState("calendar");
-  console.log(page);
   const handleOnChange = (e: any) => {
     const value = e.target.value;
     setPage(value);
   };
-  console.log(page);
 
   return (
     <div>

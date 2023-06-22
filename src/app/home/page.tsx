@@ -130,7 +130,7 @@ const Home = () => {
       </div>
       <Link href={""} className="relative bg-yellow rounded-xl p-4 block mb-8">
         <h4 className="text-xl font-medium text-primary_dark mb-2">
-          Quiz du moi
+          Quiz du mois
         </h4>
         <Image
           className="absolute top-2 right-2"
