@@ -62,7 +62,7 @@ const Question3 = ({ setData }: any) => {
               type='radio'
               name='step2'
               value='1'
-              className='hidden'
+              className='hidden peer'
               required
             />
             <div className='peer-checked:border-2 peer-checked:border-primary_dark peer-checked:rounded-md'>
@@ -80,7 +80,7 @@ const Question3 = ({ setData }: any) => {
               type='radio'
               name='step2'
               value='1'
-              className='hidden'
+              className='hidden peer'
               required
             />
             <div className='peer-checked:border-2 peer-checked:border-primary_dark peer-checked:rounded-md'>
@@ -98,7 +98,7 @@ const Question3 = ({ setData }: any) => {
               type='radio'
               name='step2'
               value='1'
-              className='hidden'
+              className='hidden peer'
               required
             />
             <div className='peer-checked:border-2 peer-checked:border-primary_dark peer-checked:rounded-md'>
@@ -116,7 +116,7 @@ const Question3 = ({ setData }: any) => {
               type='radio'
               name='step2'
               value='1'
-              className='hidden'
+              className='hidden peer'
               required
             />
             <div className='peer-checked:border-2 peer-checked:border-primary_dark peer-checked:rounded-md'>
