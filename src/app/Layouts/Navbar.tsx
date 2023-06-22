@@ -7,10 +7,9 @@ import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const currentRoute = usePathname()
-
-  if (currentRoute === '/home' || currentRoute === '/account' || currentRoute === '/blog' || currentRoute === '/directory/all' || currentRoute === '/my_period')
+  if (currentRoute !== '/' && currentRoute !== '/signin' && currentRoute !== '/signup' && currentRoute !== '/diag')
     return (
-      <div className='w-full h-[88px] border-t bg-white'>
+      <div className='w-full h-[88px] border-t bg-white flex-shrink-0'>
         <div className='grid h-full max-w-lg grid-cols-4 mx-auto font-medium'>
           <Link
             href={'/home'}
@@ -28,7 +27,7 @@ const Navbar = () => {
             <span className='text-sm text-primary_dark mt-1.5'>Home</span>
           </Link>
           <Link
-            href={''}
+            href={'/my_period'}
             className='inline-flex flex-col items-center justify-center'
           >
             <span className={currentRoute == '/my_period' ? ' bg-primary p-1 rounded-lg' : ''}>

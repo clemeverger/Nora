@@ -1,12 +1,17 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 
 const Home = () => {
+  const session = useSession()
+  const name = session?.data?.user?.name
+
   return (
     <div>
       <div className='flex justify-between items-center top-xl pt-4 pb-4'>
-        <h1 className='text-3xl text-primary_dark'>Bonjour, Nora</h1>
+        <h1 className='text-3xl text-primary_dark'>Bonjour, {name}</h1>
         <Link
           href={'/account'}
           className='relative bg-primary_light h-auto rounded-full p-2'
@@ -116,7 +121,7 @@ const Home = () => {
         </div>
       </div>
       <Link
-        href={''}
+        href={'/diag'}
         className='relative bg-yellow rounded-xl p-4 block mb-8'
       >
         <h4 className='text-xl font-medium text-primary_dark mb-2'>Quiz du mois</h4>

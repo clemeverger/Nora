@@ -1,6 +1,7 @@
 import './globals.css'
-import NextAuthProvider from './components/NextAuthProvider'
-import Navbar from './components/Navbar'
+import NextAuthProvider from './Layouts/NextAuthProvider'
+import Navbar from './Layouts/Navbar'
+import FramerMotionWrapper from './Layouts/FramerMotionWrapper'
 
 export const metadata = {
   title: 'Nora',

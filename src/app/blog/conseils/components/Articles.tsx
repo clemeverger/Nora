@@ -42,8 +42,7 @@ const Articles = () => {
     <section className='flex flex-col gap-4 mb-4'>
       <h4 className='text-xl text-primary_dark'>Articles</h4>
       {ARTICLES.map((article, index) => (
-        <Link
-          href='/blog/conseils/article'
+        <div
           key={index}
           className='flex items-center gap-4'
         >
@@ -55,7 +54,7 @@ const Articles = () => {
             height={120}
           />
           <p className='text-sm'>{article.title}</p>
-        </Link>
+        </div>
       ))}
     </section>
   )
