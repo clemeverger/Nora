@@ -11,6 +11,7 @@ module.exports = {
         white: '#FDFDFD',
         yellow: '#FCECC2',
         orange: '#FAEBE3',
+        secondary_grey: '#D7CDD4'
       },
       fontFamily: {
         manrope: ['Manrope, sans-serif'],
