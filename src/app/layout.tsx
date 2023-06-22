@@ -1,7 +1,6 @@
 'use client'
 import './globals.css'
 import NextAuthProvider from './components/NextAuthProvider'
-import Header from './components/Header'
 import Navbar from './components/Navbar'
 import { usePathname } from 'next/navigation'
 
@@ -12,7 +11,6 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  console.log('🚀 ~ RootLayout ~ pathname:', pathname)
   return (
     <html lang='fr'>
       <NextAuthProvider>
