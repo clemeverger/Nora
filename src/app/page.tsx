@@ -25,8 +25,6 @@ export default function Home() {
           S&apos;inscrire
         </Link>
       </div>
-
-      <Link href={'/'}>Continuer en tant qu&apos;invité</Link>
     </div>
   )
 }
