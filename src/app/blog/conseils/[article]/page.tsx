@@ -55,8 +55,8 @@ const Article = () => {
       </div>
       <div className="flex mt-3 items-center">
         <Image
-          src="/article1.svg"
-          className="w-16 rounded-full shadow-lg mr-3"
+          src="/avatar.jpeg"
+          className="w-12 h-12 rounded-full shadow-lg mr-3 object-cover"
           alt="Avatar circle"
           width={48}
           height={48}

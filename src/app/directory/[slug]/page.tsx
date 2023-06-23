@@ -100,7 +100,7 @@ export default async function Page({ params }: any) {
                   href={""}
                 >
                   <Image
-                    src="/article1.svg"
+                    src="/avatar.jpeg"
                     className="w-16 rounded-full shadow-lg"
                     alt="Avatar circle"
                     width={200}
